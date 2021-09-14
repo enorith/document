@@ -18,6 +18,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         repo: "enorith/enorith",
         docsRepo: "enorith/document",
         docsBranch: "master",
+        docsDir: "docs",
         sidebar: sidebar.en
     }
 })
