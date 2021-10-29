@@ -3,11 +3,17 @@ import type { SidebarConfig } from '@vuepress/theme-default'
 
 
 export const en: SidebarConfig = {
-    '/guide/': [
+    '/': [
+        {
+            text: 'Introduction',
+            children: [
+                '/introduction/about.md',
+            ],
+        },
         {
             text: 'Guide',
             children: [
-                '/guide/getting-started.md'
+                '/guide/getting-started.md',
             ],
         },
     ],

@@ -8,7 +8,7 @@ actions:
     link: /guide/getting-started.html
     type: primary
   - text: Introduction
-    link: /guide/
+    link: /introduction/about.html
     type: secondary
 features:
   - title: Simplicity first
