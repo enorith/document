@@ -29,6 +29,8 @@ export default defineUserConfig<DefaultThemeOptions>({
         locales : {
             '/zh-CN': {
                 selectLanguageName: '简体中文',
+                selectLanguageText: "选择语言",
+                home: '/zh-CN',
             }
         }
     },
