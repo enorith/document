@@ -4,6 +4,7 @@
   "description": "A golang framework for web artisan",
   "main": "index.js",
   "scripts": {
+    "serve": "vuepress dev docs",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },

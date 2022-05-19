@@ -1,6 +1,9 @@
 ---
 title: Getting started
 ---
+## Dev environment requirement 
+```Golang 1.18+```
+
 ## Install cli tools
 ```shell
 go install github.com/enorith/enocli@latest

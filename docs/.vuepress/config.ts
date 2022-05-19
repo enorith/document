@@ -13,12 +13,23 @@ export default defineUserConfig<DefaultThemeOptions>({
             title: 'Enorith',
             description: 'A golang framework for web artisan',
         },
+        '/zh-CN': {
+            lang: 'zh-CN',
+            title: 'Enorith',
+            description: 'A golang framework for web artisan',
+        },
     },
     themeConfig: {
         repo: "enorith/enorith",
         docsRepo: "enorith/document",
         docsBranch: "master",
         docsDir: "docs",
-        sidebar: sidebar.en
-    }
+        sidebar: sidebar.en,
+        home: "/",
+        locales : {
+            '/zh-CN': {
+                selectLanguageName: '简体中文',
+            }
+        }
+    },
 })
