@@ -13,14 +13,14 @@ actions:
 features:
   - title: 简要原则
     details: 只需要简单的编码就能完成强大的功能
-  - title: Components
-    details: Extract service as components.
-  - title: IoC-Container
-    details: Inject dependency automaticly.
-  - title: Not only for web
-    details: App service design can run any daemon service.
-  - title: More...
-    details: Waitting for discover. 
+  - title: 组件化
+    details: 将各个模块拆分为组件，可拔插的注册进应用程序
+  - title: 服务容器
+    details: 自动依赖注入
+  - title: 不只是为了web开发
+    details: 应用服务设计可以运行任意守护进程
+  - title: 更多内容...
+    details: 等待你的发掘 
 
 footer: MIT Licensed | Copyright © 2021-present Cao Jiayuan
 ---
