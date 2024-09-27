@@ -1,7 +1,5 @@
-import type { SidebarConfig } from '@vuepress/theme-default'
 
-
-export const en: SidebarConfig = {
+export const en = {
     '/': [
         {
             text: 'Introduction',
@@ -16,5 +14,11 @@ export const en: SidebarConfig = {
                 '/guide/project-structure.md',
             ],
         },
+        {
+            text: 'Http',
+            children: [
+                '/http/http.md',
+            ],
+        }
     ],
 }
