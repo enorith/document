@@ -5,10 +5,10 @@ heroText: Enorith
 tagline: A golang framework for web artisan
 actions:
   - text: Get Started
-    link: /guide/getting-started.html
+    link: /en/guide/getting-started.html
     type: primary
   - text: Introduction
-    link: /introduction/about.html
+    link: /en/introduction/about.html
     type: secondary
 features:
   - title: Simplicity first

@@ -1,50 +1,53 @@
 ---
-title: Project structure
+title: 项目结构
 ---
 
 [[toc]]
-
 
 ## cmd
 
 ```app```
 
-Default app entry directory
+程序默认入口
 
 ## config
 
-Yaml configs directory, including default configs:
-* ```app.yaml``` app configs
-* ```auth.yaml``` authentication configs
-* ```cache.yaml``` cache configs
-* ```cors.yaml``` [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) configs
-* ```database.yaml``` database connection configs
-* ```http.yaml``` http server configs
-* ```jwt.yaml``` jwt configs
-* ```logging.yaml``` logging configs
-* ```queue.yaml``` message queue configs
-* ```redis.yaml``` redis connection configs
-* ```session.yaml``` session configs
+yaml配置文件，包含一些默认配置:
+* ```app.yaml``` 应用配置
+* ```auth.yaml``` 登陆授权
+* ```cache.yaml``` 缓存配置
+* ```cors.yaml``` [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) 跨域配置
+* ```database.yaml``` 数据库连接配置
+* ```http.yaml``` http服务配置
+* ```jwt.yaml``` jwt验证配置
+* ```logging.yaml``` 日志配置
+* ```queue.yaml``` 消息队列配置
+* ```redis.yaml``` redis连接配置
+* ```session.yaml``` session配置（HTTP）
 
 ## internal
 
-### ```app``` directory
+### ```app``` 目录
 
-Include core code of your application, include subdirectories:
+主要存放业务代码，包括以下目录:
 
- * ```handlers``` include route handlers, schedule handles, queue job handles
+ * ```handlers```
+    - ```api``` API处理代码实现（无session）
+    - ```job``` 队列任务定义
+    - ```schedule``` 定时任务处理
+    - ```web``` web处理代码实现（带session）
 
- * ```models```
+ * ```models``` 数据库模型定义（使用gorm）
 
- * ```requests```
+ * ```requests``` 请求对象定义
 
- * ```routes```
+ * ```routes``` 路由定义
 
- * ```services```
+ * ```services``` 业务服务定义
 
- * ```bootstrap.go```
+ * ```bootstrap.go``` 启动引导文件，加载一些必要的服务
 
-## ```pkg```
+### ```pkg``` 目录
 
 ## resources
 

@@ -13,18 +13,19 @@ export default defineUserConfig({
         docsRepo: "enorith/document",
         docsBranch: "master",
         docsDir: "docs",
-        sidebar: sidebar.zhCN,
         home: "/",
         locales : {
             '/en': {
                 selectLanguageName: 'English',
                 selectLanguageText: "Languages",
                 home: '/en/home',
+                sidebar: sidebar.en
             },
             '/': {
                 selectLanguageName: '简体中文',
                 selectLanguageText: "选择语言",
                 home: '/',
+                sidebar: sidebar.zhCN
             }
         }
     }),

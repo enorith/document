@@ -1,28 +1,30 @@
 ---
-title: Getting started
+title: 快速开始
 ---
-## Dev environment requirement 
-```Golang 1.18+```
+[[toc]]
+## 开发环境要求
+```最新版本Golang```
 
-## Install cli tools
+## 安装Cli工具
 ```shell
 go install github.com/enorith/enocli@latest
 ```
 
-## Create and run your first project
+## 创建并启动你的第一个工程
 
 ```shell
 enocli init awsome
 cd awsome
 go mod tidy
-# after tweak configs
+# 修改一些配置文件后
 go build -o ./build/awsome && ./build/awsome
 
-# then access: http://localhost:8000
+# 访问地址: http://localhost:8000
 ```
 
-> Simple API code
+## 一个两个简单的代码示例
 ```go
+// internal/app/handlers/api/article.go
 package api
 
 import (
@@ -31,7 +33,7 @@ import (
 	"github.com/enorith/http/content"
 	"gorm.io/gorm"
 )
-// ArticleHandler your custom handler
+// ArticleHandler 自定义的API处理
 type ArticleHandler struct {
 }
 
@@ -41,20 +43,17 @@ type ArticleReq struct {
 }
 
 
-// ListArticles list articles with pagination
+// ListArticles 文章分页展示
 func (ArticleHandler) ListArticles(builder *database.Builder[models.Article], req ArticleReq) (*database.PageResult[models.Article], error) {
 	return builder.Query(func(d *gorm.DB) *gorm.DB {
 		if req.Type > 0 {
 			d.Where("type = ?", req.Type)
 		}
-
-		d.Preload("Files")
-		d.Order("id desc")
-		return d
+		return d.Order("id desc").Preload("Files")
 	}).Paginate()
 }
 
-// Detail show article detail
+// Detail 文章详情展示
 func (ArticleHandler) Detail(id content.ParamInt64, db *gorm.DB) (models.Article, error) {
 	var article models.Article
 
@@ -63,9 +62,18 @@ func (ArticleHandler) Detail(id content.ParamInt64, db *gorm.DB) (models.Article
     return article, e
 }
 
+
+// Detail 文章详情展示（隐式注入）
+func (ArticleHandler) Detail2(article models.Article) models.Article {
+	
+
+    return article
+}
+
 ```
-> Add route
+> 添加路由
 ```go
+// internal/routes/api.go
 package routes
 
 import (

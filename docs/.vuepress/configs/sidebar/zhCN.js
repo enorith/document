@@ -1,21 +1,27 @@
 
-export const en = {
+export const zhCN = {
     '/': [
         {
-            text: 'Introduction',
+            text: '简介',
             children: [
                 '/introduction/about.md',
             ],
         },
         {
-            text: 'Guide',
+            text: '开发指南',
             children: [
                 '/guide/getting-started.md',
                 '/guide/project-structure.md',
             ],
         },
         {
-            text: 'Http',
+            text: '基本概念',
+            children: [
+                '/concept/service.md',
+            ],
+        },
+        {
+            text: 'HTTP组件',
             children: [
                 '/http/http.md',
             ],
