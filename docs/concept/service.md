@@ -1,8 +1,14 @@
 ---
 title: 服务（service）
 ---
+[[toc]]
 
+## 一个服务的实现
 ```go
+type Config struct {
+	Foo string `yaml:"foo" env:"APP_FOO" default:"test"`
+}
+
 // Service of database
 type Service struct {
 	config Config
